@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">MyKotlinLearningApp</string>
+
+    <string name="android_multiple_thread_tutorial">Android Multiple Thread Tutorial</string>
 </resources>
