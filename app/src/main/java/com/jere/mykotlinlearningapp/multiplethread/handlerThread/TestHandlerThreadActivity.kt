@@ -7,6 +7,7 @@ import com.jere.mykotlinlearningapp.R
 import kotlinx.android.synthetic.main.activity_test_handler_thread.*
 
 class TestHandlerThreadActivity : AppCompatActivity(), View.OnClickListener {
+    var mHandlerThread: HandlerThread? = null
     var mMainHandler: Handler? = null
     var mWorkHandler: WorkHandler? = null
 
@@ -23,9 +24,9 @@ class TestHandlerThreadActivity : AppCompatActivity(), View.OnClickListener {
 
         mMainHandler = Handler(Looper.getMainLooper())
 
-        val mHandlerThread = HandlerThread("JereTest")
-        mHandlerThread.start()
-        mWorkHandler = WorkHandler(mHandlerThread.looper)
+        mHandlerThread = HandlerThread("JereTest")
+        mHandlerThread!!.start()
+        mWorkHandler = WorkHandler(mHandlerThread!!.looper)
 
         handlerThreadStart1Btn.setOnClickListener(this)
         handlerThreadStart2Btn.setOnClickListener(this)
@@ -51,6 +52,11 @@ class TestHandlerThreadActivity : AppCompatActivity(), View.OnClickListener {
             }
         }
 
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        mHandlerThread?.quit()
     }
 
 }
