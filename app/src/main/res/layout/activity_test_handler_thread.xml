@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".multiplethread.asynctask.TestAsyncTaskActivity">
+    tools:context=".multiplethread.handlerThread.TestHandlerThreadActivity">
 
     <TextView
+        android:id="@+id/handlerThreadTitleTv"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:gravity="center"
-        android:text="AsyncTask"
+        android:text="@string/handler_thread_test"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,58 +20,52 @@
     <LinearLayout
         android:id="@+id/startBtnLl"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:weightSum="2"
-        android:layout_marginTop="60dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/handlerThreadTitleTv">
 
         <Button
-            android:id="@+id/startBtn"
+            android:id="@+id/handlerThreadStart1Btn"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Start AsyncTask"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
+            android:text="@string/handler_thread_start_progress_bar_1"
+            android:textAllCaps="false" />
 
         <Button
-            android:id="@+id/cancelBtn"
+            android:id="@+id/handlerThreadStart2Btn"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Cancel AsyncTask"
-            android:textAllCaps="false"
-            android:textSize="20sp" />
-
+            android:text="@string/handler_thread_start_progress_bar_2"
+            android:textAllCaps="false" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/displayTv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="not started"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/startBtnLl" />
-
-
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/handlerThreadProgressBar1"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:max="10"
+        android:max="4"
         android:progress="0"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/displayTv" />
+        app:layout_constraintTop_toBottomOf="@id/startBtnLl" />
+
+    <ProgressBar
+        android:id="@+id/handlerThreadProgressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:max="4"
+        android:progress="0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/handlerThreadProgressBar1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
