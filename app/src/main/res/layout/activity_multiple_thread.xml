@@ -20,15 +20,22 @@
             android:id="@+id/asyncTaskTutorialBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android AsyncTask Tutorial"
+            android:text="@string/android_async_task_tutorial"
             android:textAllCaps="false" />
 
         <Button
             android:id="@+id/handlerThreadTutorialBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Android HandlerThread Tutorial"
+            android:text="@string/android_handler_thread_tutorial"
             android:textAllCaps="false" />
+
+        <Button
+            android:id="@+id/intentServiceTutorialBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/android_intent_service_tutorial"
+            android:textAllCaps="false"/>
 
     </LinearLayout>
 

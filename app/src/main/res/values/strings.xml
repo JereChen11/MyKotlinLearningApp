@@ -2,6 +2,10 @@
     <string name="app_name">MyKotlinLearningApp</string>
 
     <string name="android_multiple_thread_tutorial">Android Multiple Thread Tutorial</string>
+    <string name="android_async_task_tutorial">Android AsyncTask Tutorial</string>
+    <string name="android_handler_thread_tutorial">Android HandlerThread Tutorial</string>
+    <string name="android_intent_service_tutorial">Android IntentService Tutorial</string>
+
     <string name="handler_thread_test">HandlerThread Test</string>
     <string name="handler_thread_start_progress_bar_1">Start Progress Bar 1</string>
     <string name="handler_thread_start_progress_bar_2">Start Progress Bar 2</string>

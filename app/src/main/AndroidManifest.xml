@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".multiplethread.handlerThread.TestHandlerThreadActivity"></activity>
+        <service
+            android:name=".multiplethread.intentservice.MyIntentService"
+            android:exported="false"></service>
+
+        <activity android:name=".multiplethread.intentservice.TestIntentServiceActivity" />
+        <activity android:name=".multiplethread.handlerThread.TestHandlerThreadActivity" />
         <activity android:name=".multiplethread.asynctask.TestAsyncTaskActivity" />
         <activity android:name=".multiplethread.MultipleThreadActivity" />
         <activity android:name=".SecondActivity" />
