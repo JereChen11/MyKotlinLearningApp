@@ -11,7 +11,8 @@
         android:theme="@style/AppTheme">
         <service
             android:name=".multiplethread.intentservice.MyIntentService"
-            android:exported="false"></service>
+            android:exported="false">
+        </service>
 
         <activity android:name=".multiplethread.intentservice.TestIntentServiceActivity" />
         <activity android:name=".multiplethread.handlerThread.TestHandlerThreadActivity" />
