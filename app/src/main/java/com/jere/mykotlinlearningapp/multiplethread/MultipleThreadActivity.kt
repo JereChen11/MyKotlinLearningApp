@@ -8,6 +8,7 @@ import com.jere.mykotlinlearningapp.R
 import com.jere.mykotlinlearningapp.multiplethread.asynctask.TestAsyncTaskActivity
 import com.jere.mykotlinlearningapp.multiplethread.handlerThread.TestHandlerThreadActivity
 import com.jere.mykotlinlearningapp.multiplethread.intentservice.TestIntentServiceActivity
+import com.jere.mykotlinlearningapp.multiplethread.threadaddhandler.TestThreadAddHandlerActivity
 import kotlinx.android.synthetic.main.activity_multiple_thread.*
 
 class MultipleThreadActivity : AppCompatActivity(), View.OnClickListener{
@@ -18,6 +19,7 @@ class MultipleThreadActivity : AppCompatActivity(), View.OnClickListener{
         asyncTaskTutorialBtn.setOnClickListener(this)
         handlerThreadTutorialBtn.setOnClickListener(this)
         intentServiceTutorialBtn.setOnClickListener(this)
+        threadAddHandlerTutorialBtn.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -28,6 +30,8 @@ class MultipleThreadActivity : AppCompatActivity(), View.OnClickListener{
                 startActivity(Intent(this, TestHandlerThreadActivity::class.java))
             R.id.intentServiceTutorialBtn ->
                 startActivity(Intent(this, TestIntentServiceActivity::class.java))
+            R.id.threadAddHandlerTutorialBtn ->
+                startActivity(Intent(this, TestThreadAddHandlerActivity::class.java))
         }
     }
 

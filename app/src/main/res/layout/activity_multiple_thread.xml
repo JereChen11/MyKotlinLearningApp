@@ -9,12 +9,12 @@
     <LinearLayout
         android:layout_width="260dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/asyncTaskTutorialBtn"
@@ -35,8 +35,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/android_intent_service_tutorial"
-            android:textAllCaps="false"/>
+            android:textAllCaps="false" />
 
+        <Button
+            android:id="@+id/threadAddHandlerTutorialBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/android_thread_add_handler_tutorial"
+            android:textAllCaps="false" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

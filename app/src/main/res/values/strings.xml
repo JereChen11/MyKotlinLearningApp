@@ -5,8 +5,12 @@
     <string name="android_async_task_tutorial">Android AsyncTask Tutorial</string>
     <string name="android_handler_thread_tutorial">Android HandlerThread Tutorial</string>
     <string name="android_intent_service_tutorial">Android IntentService Tutorial</string>
+    <string name="android_thread_add_handler_tutorial">Android Thread Add Handler Tutorial</string>
     <string name="intent_service">Intent Service</string>
     <string name="handler_thread_test">HandlerThread Test</string>
     <string name="handler_thread_start_progress_bar_1">Start Progress Bar 1</string>
     <string name="handler_thread_start_progress_bar_2">Start Progress Bar 2</string>
+    <string name="handler_add_thread_test">Handler Add Thread Test</string>
+
+    <string name="start">Start</string>
 </resources>
