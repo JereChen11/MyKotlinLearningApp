@@ -9,7 +9,8 @@ import com.jere.mykotlinlearningapp.R
 import kotlinx.android.synthetic.main.activity_thread_add_handler.*
 import java.lang.ref.WeakReference
 
-class TestThreadAddHandlerActivity : AppCompatActivity() {
+//todo need register this activity on Manifest.xml
+class TestHandlerObtainMessageActivity : AppCompatActivity() {
     companion object {
         const val PROGRESS_VALUE_KEY = "PROGRESS_VALUE"
     }
@@ -25,7 +26,7 @@ class TestThreadAddHandlerActivity : AppCompatActivity() {
         })
     }
 
-    class WorkThread(activity: TestThreadAddHandlerActivity) : Thread() {
+    class WorkThread(activity: TestHandlerObtainMessageActivity) : Thread() {
         private var handler: MyHandler = MyHandler(activity)
 
         override fun run() {
@@ -33,12 +34,9 @@ class TestThreadAddHandlerActivity : AppCompatActivity() {
             for (i in 0..6) {
                 sleep(1000)
                 //通过 Handler 将进度参数传递给 主线程，让其更新 progressBar 进度
-                val message = Message()
-                message.what = 1
                 val bundle = Bundle()
                 bundle.putInt(PROGRESS_VALUE_KEY, i)
-                message.data = bundle
-                handler.sendMessage(message)
+                handler.obtainMessage(1, bundle).sendToTarget()
             }
         }
     }
@@ -46,7 +44,7 @@ class TestThreadAddHandlerActivity : AppCompatActivity() {
     /**
      * 静态内部类，防止内存泄漏
      */
-    class MyHandler(activity: TestThreadAddHandlerActivity) : Handler() {
+    class MyHandler(activity: TestHandlerObtainMessageActivity) : Handler() {
         private var weakReference = WeakReference(activity)
 
         override fun handleMessage(msg: Message) {
@@ -56,7 +54,8 @@ class TestThreadAddHandlerActivity : AppCompatActivity() {
                     val activity = weakReference.get()
                     if (activity != null && !activity.isFinishing) {
                         //获取任务执行进度参数，然后通过 ProgressBar 显示出来
-                        val progressValue: Int = msg.data.get(PROGRESS_VALUE_KEY) as Int
+                        val bundle: Bundle = msg.obj as Bundle
+                        val progressValue: Int = bundle.get(PROGRESS_VALUE_KEY) as Int
                         activity.handlerAddThreadProgressBar.progress = progressValue
                     }
                 }
